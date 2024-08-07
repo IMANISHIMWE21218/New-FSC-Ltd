@@ -1,0 +1,424 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <!-- dustech/index-2.html  13 Nov 2019 12:55:11 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="irstheme" />
+
+    <title>FSC Ltd - Rwanda</title>
+
+    <link href="{% static 'assets/css/themify-icons.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/flaticon.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/animate.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/owl.carousel.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/owl.theme.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/slick.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/slick-theme.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/swiper.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/odometer-theme-default.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/owl.transitions.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/jquery.fancybox.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+    <!-- Career Page Specific Styles -->
+    <style>
+      /* Career Page Styles */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f3f4f6;
+      }
+
+      .career-pg-section {
+        padding-bottom: 50px;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .section-title {
+        margin-top: 55px;
+        margin-bottom: 30px;
+      }
+
+      .career-job {
+        margin-bottom: 40px;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #e1e1e1;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .career-job:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .career-job h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .career-job p {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .career-job a.btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #d35400;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .career-job a.btn:hover {
+        background-color: #ba4f00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- Start header -->
+      <header id="header" class="site-header header-style-1">
+        <nav class="navigation navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="open-btn">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              {% if company_info.logo %}
+              <a class="navbar-brand" href="{% url 'index' %}">
+                  <img src="{{ company_info.logo.url }}" alt="Company Logo" />
+              </a>
+          {% else %}
+              <a class="navbar-brand" href="index.html">
+                  <img src="{% static 'assets/images/logo-2.png' %}" alt />
+              </a>
+          {% endif %}
+      </div>
+      <div id="navbar" class="navbar-collapse collapse navigation-holder">
+          <button class="close-navbar"><i class="ti-close"></i></button>
+          <ul class="nav navbar-nav">
+              <li>
+                  <a href="{% url 'index' %}">Home</a>
+              </li>
+              <li><a href="{% url 'about' %}">About</a></li>
+              <li class="menu-item-has-children">
+                  <a href="{% url 'services' %}">Services</a>
+                  <ul class="sub-menu">
+                      <li><a href="{% url 'services' %}">Services</a></li>
+                      <li><a href="{% url 'RainwaterHarvesting' %}">Rainwater Harvesting</a></li>
+                      <li><a href="{% url 'agroforestry' %}">Agroforestry and Silviculture</a></li>
+                      <li><a href="{% url 'OrganicManureProduction' %}">Organic Manure Productiony</a></li>
+                      <li><a href="{% url 'biogasGeneration' %}">Biogas Generation from Livestock Waste</a></li>
+                      <li><a href="{% url 'WasteManagement' %}">Waste Management and Value Addition</a></li>
+                      <li><a href="{% url 'RuralDevelopmentSolutions' %}">Other Activities (Integrated Rural Development Solutions)</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="{% url 'career' %}">Careers</a>
+              </li>
+              <li>
+                  <a href="{% url 'blog' %}">Insight</a>
+              </li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+      </div>
+            <!-- end of nav-collapse -->
+
+            <div class="search-contact">
+              <div class="header-search-area">
+                <!-- <div class="header-search-form">
+                  <form class="form">
+                    <div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Search here"
+                      />
+                    </div>
+                    <button type="submit" class="btn">
+                      <i class="ti-search"></i>
+                    </button>
+                  </form>
+                </div> -->
+                <!-- <div>
+                  <button class="btn open-btn">
+                    <i class="ti-search"></i>
+                  </button>
+                </div> -->
+              </div>
+              <div class="contact">
+                <div class="call">
+                  <i class="fi flaticon-call"></i>
+                  <p>Call us anytime</p>
+                  {% if company_info.phone %}
+                  <h5>{{ company_info.phone }}</h5>
+                  {% else %}
+                  <h5>+250 788302214</h5>
+                  {% endif %}
+                </div>
+                <a href="{% url 'contact' %}" class="theme-btn">Contact us</a>
+              </div>
+            </div>
+          </div>
+          <!-- end of container -->
+        </nav>
+      </header>
+      <!-- end of header -->
+
+      <!-- Page Title Section -->
+      <section class="page-title">
+        <div class="container">
+          <div class="row">
+            <div class="col col-xs-12">
+              <h2>Grow Your Career at FSC Ltd</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Page Title -->
+
+      <!-- Career Section -->
+      <section class="career-pg-section">
+        <div class="container">
+          <div class="section-title">
+            <h2>Join Our Team</h2>
+            <p>
+              Explore career opportunities at FSC Ltd, a leader in sustainable
+              agriculture. Discover roles in crop/livestock management, organic
+              farming, and more.
+            </p>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <!-- Job Listings -->
+              <div class="career-job">
+                <h3>Job Title 1</h3>
+                <p>
+                  Description of the job position goes here. Lorem ipsum dolor
+                  sit amet, consectetur adipiscing elit.
+                </p>
+                <a href="application-page.html" class="btn btn-primary"
+                  >Apply Now</a
+                >
+              </div>
+
+              <div class="career-job">
+                <h3>Job Title 2</h3>
+                <p>
+                  Description of the job position goes here. Lorem ipsum dolor
+                  sit amet, consectetur adipiscing elit.
+                </p>
+                <a href="application-page.html" class="btn btn-primary"
+                  >Apply Now</a
+                >
+              </div>
+              <!-- End Job Listings -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Career Section -->
+
+      <!-- start cta-section -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="row">
+            <div class="col col-lg-6 col-md-6">
+              <div class="cta-text">
+                <h3>Lets Get in Touch!</h3>
+                <p>
+                  Reach out to FSC Ltd for sustainable agriculture,
+                  agroforestry, waste management, and biogas solutions. Call us
+                  or email us. We look forward to hearing from you!
+                </p>
+              </div>
+            </div>
+            <div class="col col-lg-5 col-lg-offset-1 col-md-6">
+              <div class="contact-info">
+                <div>
+                  <i class="fi flaticon-call"></i>
+                  <h4>Call us</h4>
+                  <p>{{ company_info.phone }}</p>
+                </div>
+                <div>
+                  <i class="fi flaticon-contact"></i>
+                  <h4>Email us</h4>
+                  <p>{{ company_info.email }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end container -->
+      </section>
+      <!-- end cta-section -->
+
+        <!-- start site-footer -->
+<footer class="site-footer">
+  <div class="upper-footer">
+      <div class="container">
+          <div class="row">
+              <div class="col col-lg-3 col-md-3 col-sm-6">
+                  <div class="widget about-widget">
+                      <div class="logo widget-title">
+                          {% if company_info.logo %}
+                              <img src="{{ company_info.logo.url }}" alt="Company Logo" />
+                          {% else %}
+                              <img src="{% static 'assets/images/footer-logo.png' %}" alt />
+                          {% endif %}
+                      </div>
+                      <p>
+                          FSC Ltd pioneers sustainable agriculture in Rwanda,
+                          specializing in agroforestry, waste management, biogas, and
+                          community-driven solutions. Based in Kigarama, Kigali.
+                      </p>
+                      <div class="social-icons">
+                          <ul>
+                              {% if company_info.facebook %}
+                              <li>
+                                  <a href="{{ company_info.facebook }}"><i class="ti-facebook"></i></a>
+                              </li>
+                              {% endif %}
+                              {% if company_info.twitter %}
+                              <li>
+                                  <a href="{{ company_info.twitter }}"><i class="ti-twitter-alt"></i></a>
+                              </li>
+                              {% endif %}
+                              {% if company_info.linkedin %}
+                              <li>
+                                  <a href="{{ company_info.linkedin }}"><i class="ti-linkedin"></i></a>
+                              </li>
+                              {% endif %}
+                              {% if company_info.pinterest %}
+                              <li>
+                                  <a href="{{ company_info.pinterest }}"><i class="ti-pinterest"></i></a>
+                              </li>
+                              {% endif %}
+                              {% if company_info.vimo %}
+                              <li>
+                                  <a href="{{ company_info.vimo }}"><i class="ti-vimeo-alt"></i></a>
+                              </li>
+                              {% endif %}
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="col col-lg-3 col-md-3 col-sm-6">
+                  <div class="widget link-widget">
+                      <div class="widget-title">
+                          <h3>Useful Links</h3>
+                      </div>
+                      <ul>
+                          <li><a href="#">About us</a></li>
+                          <li><a href="#">Our services</a></li>
+                          <li><a href="#">Contact us</a></li>
+                          <li><a href="#">Meet team</a></li>
+                      </ul>
+                      <ul>
+                          <li><a href="#">Privacy Policy</a></li>
+                          <li><a href="https://rdb.rw/">RDB</a></li>
+                          <li><a href="https://psf.org.rw/">PSF RWANDA</a></li>
+                          <li><a href="https://www.rab.gov.rw/">RAB</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col col-lg-3 col-md-3 col-sm-6">
+                  <div class="widget contact-widget service-link-widget">
+                      <div class="widget-title">
+                          <h3>Our Address</h3>
+                      </div>
+                      <ul>
+                          <li>{{ company_info.location }}</li>
+                          {% if company_info.phone %}
+                          <li><span>Phone:</span> {{ company_info.phone }}</li>
+                          {% endif %}
+                          {% if company_info.VATnumber %}
+                          <li><span>VAT number:</span> {{ company_info.VATnumber }}</li>
+                          {% endif %}
+                          {% if company_info.email %}
+                          <li><span>Email:</span> {{ company_info.email }}</li>
+                          {% endif %}
+                          {% if company_info.office_time %}
+                          <li><span>Office Time:</span> {{ company_info.office_time }}</li>
+                          {% endif %}
+                      </ul>
+                  </div>
+              </div>
+              <div class="col col-lg-3 col-md-3 col-sm-6">
+                  <div class="widget newsletter-widget">
+                      <div class="widget-title">
+                          <h3>Newsletter</h3>
+                      </div>
+                      <p>You will be notified when something new appears.</p>
+                      <form>
+                          <div class="input-1">
+                              <input
+                                  type="email"
+                                  class="form-control"
+                                  placeholder="Email Address *"
+                                  required
+                              />
+                          </div>
+                          <div class="submit clearfix">
+                              <button type="submit"><i class="ti-email"></i></button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end container -->
+  </div>
+  <div class="lower-footer">
+      <div class="container">
+          <div class="row">
+              <div class="separator"></div>
+              <div class="col col-xs-12">
+                  <p class="copyright">
+                      <a href="templateshub.net">Templates Hub</a>
+                  </p>
+                  <div class="extra-link">
+                      <ul>
+                          <li><a href="#">Privacy & Policy</a></li>
+                          <li><a href="#">Terms</a></li>
+                          <li><a href="#">About us</a></li>
+                          <li><a href="#">FAQ</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+<!-- end site-footer -->
+
+    </div>
+    <!-- end of page-wrapper -->
+
+    <!-- All JavaScript files
+    ================================================== -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins for this template -->
+    <script src="{% static 'assets/js/jquery-plugin-collection.js' %}"></script>
+
+    <!-- Custom script for this template -->
+    <script src="{% static 'assets/js/script.js' %}"></script>
+  </body>
+
+  <!-- dustech/contact.html  13 Nov 2019 12:55:21 GMT -->
+</html>

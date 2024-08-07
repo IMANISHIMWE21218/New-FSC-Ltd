@@ -1,0 +1,413 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <!-- dustech/index-2.html  13 Nov 2019 12:55:11 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="irstheme" />
+
+    <title>FSC Ltd - Rwanda</title>
+
+    <link href="{% static 'assets/css/themify-icons.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/flaticon.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/animate.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/owl.carousel.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/owl.theme.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/slick.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/slick-theme.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/swiper.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/odometer-theme-default.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/owl.transitions.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/jquery.fancybox.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- start page-wrapper -->
+    <div class="page-wrapper">
+
+       
+
+             <!-- Start header -->
+      <header id="header" class="site-header header-style-1">
+        <nav class="navigation navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="open-btn">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              {% if company_info.logo %}
+                  <a class="navbar-brand" href="{% url 'index' %}">
+                      <img src="{{ company_info.logo.url }}" alt="Company Logo" />
+                  </a>
+              {% else %}
+                  <a class="navbar-brand" href="index.html">
+                      <img src="{% static 'assets/images/logo-2.png' %}" alt />
+                  </a>
+              {% endif %}
+          </div>
+          <div id="navbar" class="navbar-collapse collapse navigation-holder">
+              <button class="close-navbar"><i class="ti-close"></i></button>
+              <ul class="nav navbar-nav">
+                  <li>
+                      <a href="{% url 'index' %}">Home</a>
+                  </li>
+                  <li><a href="{% url 'about' %}">About</a></li>
+                  <li class="menu-item-has-children">
+                      <a href="{% url 'services' %}">Services</a>
+                      <ul class="sub-menu">
+                          <li><a href="{% url 'services' %}">Services</a></li>
+                          <li><a href="{% url 'RainwaterHarvesting' %}">Rainwater Harvesting</a></li>
+                          <li><a href="{% url 'agroforestry' %}">Agroforestry and Silviculture</a></li>
+                          <li><a href="{% url 'OrganicManureProduction' %}">Organic Manure Productiony</a></li>
+                          <li><a href="{% url 'biogasGeneration' %}">Biogas Generation from Livestock Waste</a></li>
+                          <li><a href="{% url 'WasteManagement' %}">Waste Management and Value Addition</a></li>
+                          <li><a href="{% url 'RuralDevelopmentSolutions' %}">Other Activities (Integrated Rural Development Solutions)</a></li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="{% url 'career' %}">Careers</a>
+                  </li>
+                  <li>
+                      <a href="{% url 'blog' %}">Insight</a>
+                  </li>
+                  <li><a href="{% url 'contact' %}">Contact</a></li>
+              </ul>
+          </div>
+            <!-- end of nav-collapse -->
+
+            <div class="search-contact">
+              <div class="header-search-area">
+                <!-- <div class="header-search-form">
+                  <form class="form">
+                    <div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Search here"
+                      />
+                    </div>
+                    <button type="submit" class="btn">
+                      <i class="ti-search"></i>
+                    </button>
+                  </form>
+                </div> -->
+                <!-- <div>
+                  <button class="btn open-btn">
+                    <i class="ti-search"></i>
+                  </button>
+                </div> -->
+              </div>
+              <div class="contact">
+                <div class="call">
+                  <i class="fi flaticon-call"></i>
+                  <p>Call us anytime</p>
+                  {% if company_info.phone %}
+                  <h5>{{ company_info.phone }}</h5>
+                  {% else %}
+                  <h5>+250 788302214</h5>
+                  {% endif %}
+                </div>
+                <a href="{% url 'contact' %}" class="theme-btn">Contact us</a>
+              </div>
+            </div>
+          </div>
+          <!-- end of container -->
+        </nav>
+      </header>
+      <!-- end of header -->
+
+
+        <!-- start page-title -->
+        <section class="page-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <h2>Blog</h2>
+                    </div>
+                </div> <!-- end row -->
+            </div> <!-- end container -->
+        </section>        
+        <!-- end page-title -->
+
+
+       <!-- start blog-pg-section -->
+<section class="blog-pg-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="blog-content">
+                    {% for blog in blogs %}
+                    <div class="post format-gallery">
+                        <div class="entry-media post-slider">
+                            {% if blog.image %}
+                                <img src="{{ blog.image.url }}"  style="height: 520px;" alt>
+                            {% endif %}
+                            {% if blog.image_two %}
+                                <img src="{{ blog.image_two.url }}" style="height: 520px;" alt>
+                            {% endif %}
+                        </div>
+                        <ul class="entry-meta">
+                            <li><a href="#"><i class="ti-time"></i> {{ blog.date|date:"d M Y" }}</a></li>
+                            <li><a href="#"><i class="ti-book"></i> {{ blog.category }}</a></li>
+                            <li><a href="#"><i class="ti-user"></i> {{ blog.author }}</a></li>
+                        </ul>
+                        <h3><a href="{% url 'blogsingle' blog.pk %}">{{ blog.title }}</a></h3>
+                        <p>{{ blog.description }}</p>
+                        <a href="{% url 'blogsingle' blog.pk %}" class="theme-btn">Read More</a>
+                    </div>
+                   
+                    {% endfor %}
+            
+                    <div class="pagination-wrapper pagination-wrapper-left">
+                        <ul class="pg-pagination">
+                            {% if blogs.has_previous %}
+                            <li>
+                                <a href="?page={{ blogs.previous_page_number }}" aria-label="Previous">
+                                    <i class="fi flaticon-back"></i>
+                                </a>
+                            </li>
+                            {% endif %}
+            
+                            {% for num in blogs.paginator.page_range %}
+                            <li class="{% if blogs.number == num %}active{% endif %}">
+                                <a href="?page={{ num }}">{{ num }}</a>
+                            </li>
+                            {% endfor %}
+            
+                            {% if blogs.has_next %}
+                            <li>
+                                <a href="?page={{ blogs.next_page_number }}" aria-label="Next">
+                                    <i class="fi flaticon-next"></i>
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <div class="col col-md-4">
+                <div class="blog-sidebar">
+                    <div class="widget about-widget">
+                        <h3>About us</h3>
+                        <div class="img-holder">
+                            <img src="{% static 'assets/images/blog/about-widget.jpg' %}" alt>
+                        </div>
+                        <p>FSC Ltd is dedicated to promoting sustainable agriculture through innovative practices in crop and livestock farming.</p>
+                        <a href="{% url 'about' %}">More about us</a>
+                    </div>
+                    <div class="widget search-widget">
+                        <h3>Search</h3>
+                        <form>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Search Post..">
+                                <button type="submit"><i class="ti-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="widget category-widget">
+                        <h3>Categories</h3>
+                        <ul>
+                            {% for category in categories %}
+                                <li><a href="#">{{ category.category }} <span>({{ category.count }})</span></a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    
+                    <div class="widget recent-post-widget">
+                        <h3>Recent post</h3>
+                        <div class="posts">
+                            {% for post in recent_posts %}
+                            <div class="post">
+                                <div class="img-holder">
+                                    {% if post.image %}
+                                    <img src="{{ post.image.url }}" style="height: 45px; width: 45px;" alt="{{ post.title }}">
+                                    {% else %}
+                                    <img src="assets/images/default-post.jpg" alt="Default Image">
+                                    {% endif %}
+                                </div>
+                                <div class="details">
+                                    <h4><a href="{% url 'blogsingle' post.pk %}">{{ post.title }}</a></h4>
+                                    <span class="date"><i class="ti-timer"></i>{{ post.date|date:"M d Y" }}</span>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <div class="widget tag-widget">
+                        <h3>Tags</h3>
+                        <ul>
+                            {% for tag in tags %}
+                            <li><a href="#">{{ tag.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div> <!-- end container -->
+</section>
+<!-- end blog-pg-section -->
+
+
+        <!-- start cta-section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-6 col-md-6">
+                        <div class="cta-text">
+                            <h3>Lets Get in Touch!</h3>
+                            <p>Raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather.</p>
+                        </div>
+                    </div>
+                    <div class="col col-lg-5 col-lg-offset-1 col-md-6">
+                        <div class="contact-info">
+                            <div>
+                              <i class="fi flaticon-call"></i>
+                              <h4>Call us</h4>
+                              <p>{{ company_info.phone }}</p>
+                            </div>
+                            <div>
+                              <i class="fi flaticon-contact"></i>
+                              <h4>Email us</h4>
+                              <p>{{ company_info.email }}</p>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div> <!-- end container -->
+        </section>
+        <!-- end cta-section -->
+
+
+        <!-- start site-footer -->
+        <footer class="site-footer">
+            <div class="upper-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-3 col-sm-6">
+                            <div class="widget about-widget">
+                                <div class="logo widget-title">
+                                    <img src="assets/images/footer-logo.png" alt>
+                                </div>
+                                <p>Mikago arm towards the viewer gregor then turned to look out the window at the dull weather</p>
+                                <div class="social-icons">
+                                    <ul>
+                                        <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                        <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                        <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="ti-pinterest"></i></a></li>
+                                        <li><a href="#"><i class="ti-vimeo-alt"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3 col-md-3 col-sm-6">
+                            <div class="widget link-widget">
+                                <div class="widget-title">
+                                    <h3>Usefull Links</h3>
+                                </div>
+                                <ul>
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Our services</a></li>
+                                    <li><a href="#">Contact us</a></li>
+                                    <li><a href="#">Meet team</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#">Provacu Policy</a></li>
+                                    <li><a href="#">Testimonials</a></li>
+                                    <li><a href="#">News</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3 col-md-3 col-sm-6">
+                            <div class="widget contact-widget service-link-widget">
+                                <div class="widget-title">
+                                    <h3>Our Address</h3>
+                                </div>
+                                <ul>
+                                    <li>25/19 Duel aveniew, new Booston town, Ghana</li>
+                                    <li><span>Phone:</span> 84667441</li>
+                                    <li><span>Email:</span> demo@example.com</li>
+                                    <li><span>Office Time:</span> 10AM- 5PM</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3 col-md-3 col-sm-6">
+                            <div class="widget newsletter-widget">
+                                <div class="widget-title">
+                                    <h3>Newsletter</h3>
+                                </div>
+                                <p>You will be notified when somthing new will be appear.</p>
+                                <form>
+                                    <div class="input-1">
+                                        <input type="email" class="form-control" placeholder="Email Address *" required>
+                                    </div>
+                                    <div class="submit clearfix">
+                                        <button type="submit"><i class="ti-email"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end container -->
+            </div>
+            <div class="lower-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="separator"></div>
+                        <div class="col col-xs-12">
+                            <p class="copyright"><a href="templateshub.net">Templates Hub</a></p>
+                            <div class="extra-link">
+                                <ul>
+                                    <li><a href="#">Privace & Policy</a></li>
+                                    <li><a href="#">Terms</a></li>
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end site-footer -->
+    </div>
+    <!-- end of page-wrapper -->
+
+
+
+     <!-- All JavaScript files
+    ================================================== -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins for this template -->
+    <script src="{% static 'assets/js/jquery-plugin-collection.js' %}"></script>
+
+    <!-- Custom script for this template -->
+    <script src="{% static 'assets/js/script.js' %}"></script>
+  </body>
+
+<!-- dustech/blog.html  13 Nov 2019 12:56:16 GMT -->
+</html>

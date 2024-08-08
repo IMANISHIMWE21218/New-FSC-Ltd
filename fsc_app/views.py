@@ -143,16 +143,7 @@ def wholesale_of_agricultural(request):
 
 def extraterritorial_organizations(request):
     company_info = CompanyInfo.objects.first()
-    return render(request, 'fsc/wholesale_of_agricultural.html', {'company_info': company_info})
-
-
-
-
-
-
-
-
-
+    return render(request, 'fsc/extraterritorial_organizations.html', {'company_info': company_info})
 
 
 

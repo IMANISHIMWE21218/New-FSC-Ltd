@@ -11,12 +11,15 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
+<<<<<<< HEAD
 import boto3
 from botocore.client import Config
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
+=======
+>>>>>>> 95af796ec41ca59479c47e3bb1eac48203cdf852
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,7 +48,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "fsc_app",
     'django.contrib.humanize',
+<<<<<<< HEAD
     'storages',
+=======
+>>>>>>> 95af796ec41ca59479c47e3bb1eac48203cdf852
     
 ]
 
@@ -83,6 +89,7 @@ WSGI_APPLICATION = "fsc_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+<<<<<<< HEAD
 # DATABASES = {
 #     "default": {
 #         "ENGINE": "django.db.backends.sqlite3",
@@ -114,6 +121,15 @@ DATABASES = {
 # }
 
 
+=======
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
+
+>>>>>>> 95af796ec41ca59479c47e3bb1eac48203cdf852
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -149,6 +165,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+<<<<<<< HEAD
 
 # AWS S3 settings
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
@@ -170,6 +187,8 @@ MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
 
 
+=======
+>>>>>>> 95af796ec41ca59479c47e3bb1eac48203cdf852
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

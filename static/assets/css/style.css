@@ -3102,114 +3102,89 @@ img {
 /*--------------------------------------------------------------
 #0.7	service-section
 --------------------------------------------------------------*/
-.service-section {
-  padding-bottom: 90px;
+.service-section-s2 {
+  padding-bottom: 33px;
+  background: url("../images/dots.png") left top/100% no-repeat local;
 }
 
 @media (max-width: 991px) {
-  .service-section {
-    padding-bottom: 80px;
+  .service-section-s2 {
+    padding-bottom: 23px;
   }
 }
 
 @media (max-width: 767px) {
-  .service-section {
-    padding-bottom: 70px;
+  .service-section-s2 {
+    padding-bottom: 13px;
   }
 }
 
-.service-section .title-text {
+.service-section-s2 .title-text {
   text-align: right;
   padding-top: 20px;
 }
 
 @media (max-width: 991px) {
-  .service-section .title-text {
+  .service-section-s2 .title-text {
     text-align: left;
     margin-bottom: 50px;
     padding-top: 0;
   }
 }
 
-.service-section .service-grids {
+.service-section-s2 .service-grids {
   margin: 0 -15px;
 }
 
 @media (max-width: 767px) {
-  .service-section .service-grids {
+  .service-section-s2 .service-grids {
     margin: 0 -7.5px;
   }
 }
 
-.service-section .service-grids .grid {
+.service-section-s2 .service-grids .grid {
   width: calc(33.33% - 30px);
   float: left;
-  margin: 0 15px 30px;
-  padding: 40px 35px;
-  text-align: center;
-  -webkit-box-shadow: 0px 5px 47.2px 11.8px rgba(19, 30, 74, 0.1);
-  box-shadow: 0px 5px 47.2px 11.8px rgba(19, 30, 74, 0.1);
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  transition: all 0.3s;
-  position: relative;
-  top: 0;
+  margin: 0 15px 60px;
 }
 
 @media (max-width: 1199px) {
   .service-section .service-grids .grid {
-    padding: 40px 35px;
+    padding: 30px 25px;
   }
 }
 
 @media (max-width: 991px) {
   .service-section .service-grids .grid {
-    width: calc(50% - 30px);
+    flex: 1 1 calc(50% - 30px);
   }
 }
 
 @media (max-width: 767px) {
   .service-section .service-grids .grid {
-    width: calc(50% - 15px);
-    padding: 30px 20px;
-    margin: 0 7.5px 15px;
-  }
-}
-
-@media (max-width: 600px) {
-  .service-section .service-grids .grid {
-    width: calc(100% - 15px);
-    float: none;
+    flex: 1 1 calc(100% - 15px);
+    padding: 20px;
   }
 }
 
 .service-section .service-grids .grid:hover {
   top: -10px;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -ms-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 .service-section .service-grids .grid > .fi:before {
   font-size: 50px;
-  font-size: 3.125rem;
   color: #d35400;
 }
 
 .service-section .service-grids h4 {
   font-size: 18px;
-  font-size: 1.125rem;
   margin: 1em 0;
 }
 
 @media (max-width: 767px) {
   .service-section .service-grids h4 {
     font-size: 16px;
-    font-size: 1rem;
   }
 }
 
@@ -3223,20 +3198,17 @@ img {
 
 .service-section .service-grids p {
   font-size: 15px;
-  font-size: 0.9375rem;
   margin: 0 0 1em;
 }
 
 @media (max-width: 767px) {
   .service-section .service-grids p {
     font-size: 14px;
-    font-size: 0.875rem;
   }
 }
 
 .service-section .service-grids .read-more {
   font-size: 15px;
-  font-size: 0.9375rem;
   font-weight: 500;
   color: #0b5345;
 }
@@ -3244,7 +3216,6 @@ img {
 @media (max-width: 767px) {
   .service-section .service-grids .read-more {
     font-size: 14px;
-    font-size: 0.875rem;
   }
 }
 
@@ -3254,7 +3225,6 @@ img {
 
 .service-section .service-grids .read-more .fi:before {
   font-size: 15px;
-  font-size: 0.9375rem;
 }
 
 .service-section .view-all {
@@ -3271,8 +3241,40 @@ img {
   color: #d35400;
 }
 
-.services-pg-section {
-  padding-bottom: 80px;
+.service-section .service-grids .read-more-all {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0b5345;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #0b5345;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.service-section .service-grids .read-more-all:hover {
+  background-color: #0b5345;
+  color: #ffffff;
+}
+
+/* Show More/Show Less Button Styles */
+#show-more-btn {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff; /* Set text color to white for better contrast */
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #d35400; /* Orange border */
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: #d35400; /* Orange background */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#show-more-btn:hover {
+  background-color: #0b5345; /* Green background on hover */
+  color: #ffffff;
 }
 
 @media (max-width: 991px) {

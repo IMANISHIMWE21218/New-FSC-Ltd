@@ -3212,7 +3212,11 @@ img {
   font-weight: 500;
   color: #0b5345;
 }
-
+.text-center{
+  font-size: 15px;
+  font-weight: 600;
+  color: #d35400;
+}
 @media (max-width: 767px) {
   .service-section .service-grids .read-more {
     font-size: 14px;

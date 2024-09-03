@@ -59,12 +59,20 @@ def blog(request):
 def blogsingle(request, pk):
     post = get_object_or_404(Blog, pk=pk)
     company_info = CompanyInfo.objects.first()
+    
+    categories = Blog.objects.values('category').annotate(count=Count('category')).order_by('category')
+    recent_posts = Blog.objects.order_by('-date')[:3]
+    tags = tags = Tag.objects.all()[:6]
+
      # Get the previous and next posts
     previous_post = Blog.objects.filter(pk__lt=post.pk).order_by('-pk').first()
     next_post = Blog.objects.filter(pk__gt=post.pk).order_by('pk').first()
     return render(request, 'fsc/blog-single.html', {
         'post': post,
         'previous_post': previous_post,
+        'categories': categories ,
+        'recent_posts': recent_posts,
+        'tags': tags,
         'next_post': next_post,
         'company_info': company_info
     })

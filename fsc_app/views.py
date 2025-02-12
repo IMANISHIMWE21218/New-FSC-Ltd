@@ -84,7 +84,7 @@ def contact(request):
 
 def agroforestry(request):
     company_info = CompanyInfo.objects.first()
-    return render(request, 'fsc/agroforestry.html', {'company_info': company_info})
+    return render(request, 'fsc/Agroforestry.html', {'company_info': company_info})
 
 def biogasGeneration(request):
     company_info = CompanyInfo.objects.first()

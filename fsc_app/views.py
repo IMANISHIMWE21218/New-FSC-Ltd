@@ -36,8 +36,9 @@ def projectsingle(request, id):
 
 def about(request):
     company_info = CompanyInfo.objects.first()
-     team_members = TeamMember.objects.all()
+    team_members = TeamMember.objects.all()  
     return render(request, 'fsc/about.html', {'company_info': company_info, 'team_members': team_members})
+
 
 
 from django.shortcuts import render

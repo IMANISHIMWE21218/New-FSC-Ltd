@@ -522,7 +522,7 @@
       <!-- end fun-fact-section -->
 
       <!-- start team-section -->
-      <section class="team-section section-padding">
+            <section class="team-section section-padding">
         <div class="container">
           <div class="row">
             <div class="col col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
@@ -539,117 +539,48 @@
           <div class="row">
             <div class="col col-xs-12">
               <div class="team-grids">
-                <div class="grid">
-                  <div class="img-social">
-                    <div class="img-holder">
-                      <img
-                        src="{% static 'assets/images/team/img-1.jpg' %}"
-                        alt="Donatha MUKANYARWAYA"
-                      />
+                {% for member in team_members %}
+                    <div class="grid">
+                        <div class="img-social">
+                            <div class="img-holder">
+                              {% if member.image %}
+                              <img src="{{ member.image.url }}" alt="{{ member.name }}" />
+                              {% else %}
+                                  <img src="{% static 'assets/images/default-team-member.jpg' %}" alt="Default Team Member">
+                              {% endif %}
+                            </div>
+                            <div class="social">
+                                <ul>
+                                    {% if member.facebook %}
+                                    <li>
+                                        <a href="{{ member.facebook }}"><i class="ti-facebook"></i></a>
+                                    </li>
+                                    {% endif %}
+                                    {% if member.twitter %}
+                                    <li>
+                                        <a href="{{ member.twitter }}"><i class="ti-twitter-alt"></i></a>
+                                    </li>
+                                    {% endif %}
+                                    {% if member.linkedin %}
+                                    <li>
+                                        <a href="{{ member.linkedin }}"><i class="ti-linkedin"></i></a>
+                                    </li>
+                                    {% endif %}
+                                    {% if member.pinterest %}
+                                    <li>
+                                        <a href="{{ member.pinterest }}"><i class="ti-pinterest"></i></a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="details">
+                            <h3>{{ member.name }}</h3>
+                            <span>{{ member.position }}</span>
+                        </div>
                     </div>
-                    <div class="social">
-                      <ul>
-                        <li>
-                          <a href="#"><i class="ti-facebook"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-twitter-alt"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-linkedin"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-pinterest"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="details">
-                    <h3>Donatha MUKANYARWAYA</h3>
-                    <span>Managing Director</span>
-                  </div>
-                </div>
-                <div class="grid">
-                  <div class="img-social">
-                    <div class="img-holder">
-                      <img src="{% static 'assets/images/team/img-2.jpg' %}" alt />
-                    </div>
-                    <div class="social">
-                      <ul>
-                        <li>
-                          <a href="#"><i class="ti-facebook"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-twitter-alt"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-linkedin"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-pinterest"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="details">
-                    <h3>Béata Mukamana</h3>
-                    <span>Shareholder</span>
-                  </div>
-                </div>
-                <div class="grid">
-                  <div class="img-social">
-                    <div class="img-holder">
-                      <img src="{% static 'assets/images/team/img-3.jpg' %}" alt />
-                    </div>
-                    <div class="social">
-                      <ul>
-                        <li>
-                          <a href="#"><i class="ti-facebook"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-twitter-alt"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-linkedin"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-pinterest"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="details">
-                    <h3>Constance Uwizeyimana</h3>
-                    <span>Shareholder</span>
-                  </div>
-                </div>
-                <div class="grid">
-                  <div class="img-social">
-                    <div class="img-holder">
-                      <img src="{% static 'assets/images/team/img-4.jpg' %}" alt />
-                    </div>
-                    <div class="social">
-                      <ul>
-                        <li>
-                          <a href="#"><i class="ti-facebook"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-twitter-alt"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-linkedin"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-pinterest"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="details">
-                    <h3>Celestin Sebahire</h3>
-                    <span>Shareholder</span>
-                  </div>
-                </div>
+                    {% endfor %}
+   
                 <!-- Add more team members here if needed -->
               </div>
             </div>

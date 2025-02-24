@@ -706,6 +706,9 @@
                         <div class="details">
                             <h3>{{ member.name }}</h3>
                             <span>{{ member.position }}</span>
+                             <p> {{ member.member_category }}</p>
+                             <p>Tel: {{ member.telephone }}</p>
+                             <p>Email: <a href="mailto:{{ member.email }}">{{ member.email }}</a></p>
                         </div>
                     </div>
                     {% endfor %}

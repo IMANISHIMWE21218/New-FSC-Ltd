@@ -86,6 +86,9 @@ class Partner(models.Model):
 class TeamMember(models.Model):
     name = models.CharField(max_length=255)
     position = models.CharField(max_length=255)
+    member_category = models.CharField(max_length=255, null=True, blank=True)
+    telephone = models.CharField(max_length=20, null=True, blank=True)
+    email = models.EmailField(max_length=255, null=True, blank=True)
     image = models.ImageField(upload_to='team/', null=True, blank=True)
     facebook = models.CharField(max_length=200, null=True, blank=True)
     twitter = models.CharField(max_length=200, null=True, blank=True)
@@ -94,6 +97,7 @@ class TeamMember(models.Model):
 
     def __str__(self):
         return self.name
+
     
 
 

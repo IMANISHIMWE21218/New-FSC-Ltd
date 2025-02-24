@@ -706,9 +706,15 @@
                         <div class="details">
                             <h3>{{ member.name }}</h3>
                             <span>{{ member.position }}</span>
-                             <p> {{ member.member_category }}</p>
-                             <p>Tel: {{ member.telephone }}</p>
-                             <p>Email: <a href="mailto:{{ member.email }}">{{ member.email }}</a></p>
+                             {% if member.member_category %}
+                                  <p>{{ member.member_category }}</p>
+                              {% endif %}
+                              {% if member.telephone %}
+                                  <p>Tel: {{ member.telephone }}</p>
+                              {% endif %}
+                              {% if member.email %}
+                                  <p>Email: <a href="mailto:{{ member.email }}" style="color: #007bff;">{{ member.email }}</a></p>
+                              {% endif %}
                         </div>
                     </div>
                     {% endfor %}

@@ -10,7 +10,7 @@ def index(request):
     testimonials = TestimonialInfo.objects.all()
     projects = OurProjects.objects.all()
     partners = Partner.objects.all()
-    team_members = TeamMember.objects.all()
+    team_members = TeamMember.objects.order_by("id")
     return render(request, 'fsc/index.html', {
         'company_info': company_info,
         'testimonials': testimonials,

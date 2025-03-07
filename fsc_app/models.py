@@ -85,7 +85,7 @@ class Partner(models.Model):
     
 class TeamMember(models.Model):
     name = models.CharField(max_length=255)
-    position = models.CharField(max_length=255)
+    position = models.CharField(max_length=255, null=True, blank=True)
     member_category = models.CharField(max_length=255, null=True, blank=True)
     telephone = models.CharField(max_length=20, null=True, blank=True)
     email = models.EmailField(max_length=255, null=True, blank=True)

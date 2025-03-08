@@ -33,6 +33,7 @@ urlpatterns = [
 
    
     path('services', views.services, name='services'),
+    path('paema',views.paema, name='paema'),
 
 
 

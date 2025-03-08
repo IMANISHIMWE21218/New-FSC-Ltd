@@ -165,6 +165,13 @@ def services(request):
 
     return render(request, 'fsc/services-s2.html', {'company_info': company_info})
 
+def paema(request):
+    company_info = CompanyInfo.objects.first()
+
+    return render(request, 'fsc/paema-index.html', {'company_info': company_info})
+
+
+
 
 
 
